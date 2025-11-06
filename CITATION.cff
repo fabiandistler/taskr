@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Distler
+    given-names: Fabian
+title: "taskr: Modern Task Runner for R Projects"
+version: 0.1.0
+date-released: 2025-11-06
+url: "https://github.com/fabiandistler/taskr"
+license: MIT
+repository-code: "https://github.com/fabiandistler/taskr"
+keywords:
+  - R
+  - task-runner
+  - workflow
+  - automation
+  - build-tool
