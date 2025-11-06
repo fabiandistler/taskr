@@ -5,7 +5,8 @@
 #'
 #' @param task_name Name of the task to run
 #' @param force Force execution even if files haven't changed (default: FALSE)
-#' @param dry_run Show what would be executed without actually running (default: FALSE)
+#' @param dry_run Show what would be executed without actually running
+#'   (default: FALSE)
 #' @param verbose Show detailed output (default: TRUE)
 #'
 #' @return Invisibly returns TRUE on success
@@ -54,7 +55,9 @@ run_task <- function(task_name,
   if (verbose) {
     cli::cli_h1("Running task: {task_name}")
     if (length(execution_order) > 1) {
-      cli::cli_alert_info("Execution order: {paste(execution_order, collapse = ' -> ')}")
+      cli::cli_alert_info(
+        "Execution order: {paste(execution_order, collapse = ' -> ')}"
+      )
     }
   }
 
@@ -120,10 +123,20 @@ run_task <- function(task_name,
   if (verbose) {
     cli::cli_h1("Summary")
     if (length(executed) > 0) {
-      cli::cli_alert_success("Executed {length(executed)} task(s): {paste(executed, collapse = ', ')}")
+      cli::cli_alert_success(
+        paste0(
+          "Executed ", length(executed), " task(s): ",
+          paste(executed, collapse = ", ")
+        )
+      )
     }
     if (length(skipped) > 0) {
-      cli::cli_alert_info("Skipped {length(skipped)} task(s): {paste(skipped, collapse = ', ')}")
+      cli::cli_alert_info(
+        paste0(
+          "Skipped ", length(skipped), " task(s): ",
+          paste(skipped, collapse = ", ")
+        )
+      )
     }
   }
 
@@ -215,10 +228,20 @@ list_tasks <- function(verbose = TRUE) {
         cat("    ", task$desc, "\n", sep = "")
       }
       if (length(task$deps) > 0) {
-        cat("    Dependencies: ", paste(task$deps, collapse = ", "), "\n", sep = "")
+        cat(
+          "    Dependencies: ",
+          paste(task$deps, collapse = ", "),
+          "\n",
+          sep = ""
+        )
       }
       if (length(task$sources) > 0) {
-        cat("    Sources: ", paste(task$sources, collapse = ", "), "\n", sep = "")
+        cat(
+          "    Sources: ",
+          paste(task$sources, collapse = ", "),
+          "\n",
+          sep = ""
+        )
       }
     }
   }

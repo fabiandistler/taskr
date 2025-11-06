@@ -13,7 +13,8 @@ NULL
 #' @description
 #' Processes command line arguments and executes the appropriate action.
 #'
-#' @param args Command line arguments (default: commandArgs(trailingOnly = TRUE))
+#' @param args Command line arguments
+#'   (default: commandArgs(trailingOnly = TRUE))
 #'
 #' @return Invisibly returns exit code (0 = success, 1 = error)
 #' @export
@@ -155,7 +156,8 @@ cli_help <- function(args = NULL) {
     "Commands:",
     "  list               List all available tasks",
     "  run <task>         Run a specific task",
-    "  init [template]    Initialize taskfile.R (templates: basic, package, data_pipeline)",
+    "  init [template]    Initialize taskfile.R",
+    "                     (templates: basic, package, data_pipeline)",
     "  validate           Validate task dependencies",
     "  clear-cache        Clear task cache",
     "  help               Show this help message",

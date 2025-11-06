@@ -1,8 +1,9 @@
 #' Resolve Task Dependencies
 #'
 #' @description
-#' Resolves the dependency graph for a task and returns tasks in execution order.
-#' Uses topological sorting to handle complex dependency chains.
+#' Resolves the dependency graph for a task and returns tasks in
+#' execution order. Uses topological sorting to handle complex
+#' dependency chains.
 #'
 #' @param task_name Name of the task to resolve dependencies for
 #' @param tasks Named list of all available tasks

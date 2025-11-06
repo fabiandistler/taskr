@@ -30,8 +30,13 @@ define_tasks <- function(..., .env = NULL) {
   # Validate all inputs are task objects
   for (i in seq_along(tasks)) {
     if (!inherits(tasks[[i]], "taskr_task")) {
-      stop(sprintf("Argument %d is not a task object. Use task() to create tasks.", i),
-           call. = FALSE)
+      stop(
+        sprintf(
+          "Argument %d is not a task object. Use task() to create tasks.",
+          i
+        ),
+        call. = FALSE
+      )
     }
   }
 
